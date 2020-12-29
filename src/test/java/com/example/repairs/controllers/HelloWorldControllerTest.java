@@ -23,8 +23,8 @@ class HelloWorldControllerTest {
      */
     @Test
     void getGreetingWithoutName() throws Exception {
-        mockMvc.perform(get("/hello")).andExpect(status().isOk());
-        mockMvc.perform(get("/hello")).andExpect(content().string("Hello World")).andReturn();
+        mockMvc.perform(get("/hello")).andExpect(status().isOk()).andExpect(content()
+                .string("Hello World")).andReturn();
     }
 
     /**
@@ -34,7 +34,7 @@ class HelloWorldControllerTest {
      */
     @Test
     void getGreetingWithName() throws Exception {
-        mockMvc.perform(get("/hello?name=Chris")).andExpect(status().isOk());
-        mockMvc.perform((get("/hello?name=Chris"))).andExpect(content().string("Hello Chris")).andReturn();
+        mockMvc.perform(get("/hello?name=Chris")).andExpect(status().isOk()).andExpect(content()
+                .string("Hello Chris")).andReturn();
     }
 }
